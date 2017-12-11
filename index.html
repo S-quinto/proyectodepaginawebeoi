@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="utf-8" />
+ <title> SQA Photography </title>
+ <link rel="stylesheet" type="text/css" href="estilos.css"/>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<script>
+
+    
+
+    var imagenes=new Array(
+
+        ['img/1.jpg',''],
+
+        ['img/2.jpg',''],
+
+        ['img/3.jpg',''],
+
+        ['img/4.jpg','']
+		
+		 ['img/5.jpg','']
+
+    );
+
+ 
+
+    /**
+
+     * Funcion para cambiar la imagen y link
+
+     */
+
+    function rotarImagenes()
+
+    {
+
+        // obtenemos un numero aleatorio entre 0 y la cantidad de imagenes que hay
+
+        var index=Math.floor((Math.random()*imagenes.length));
+
+ 
+
+        // cambiamos la imagen y la url
+
+        document.getElementById("imagen").src=imagenes[index][0];
+
+        document.getElementById("link").href=imagenes[index][5];
+
+    }
+
+ 
+
+    /**
+
+     * Función que se ejecuta una vez cargada la página
+
+     */
+
+    onload=function()
+
+    {
+
+        // Cargamos una imagen aleatoria
+
+        rotarImagenes();
+
+ 
+
+        // Indicamos que cada 5 segundos cambie la imagen
+
+        setInterval(rotarImagenes,5000);
+
+    }
+
+</script>
+
+
+</head>
+<body>
+
+
+	<div>
+		
+		<img src= "imagenes/logotipo.jpg" id="logotipo" alt="logotipo" title="logotipo" width="100"/>
+		<h1 style="font-size:60px;">SQA <strong>PHOTOGRAPHY</strong></h1>
+		<h2>Más que fotografía</h2>
+
+		<hr/>
+
+	</div>
+
+<div>
+	<ul>
+			<li>
+					<a href=" index.html"><p class= "inicio">Inicio</p></a>
+			</li>
+
+			<li>
+					<a href="portfolio.html"><p>Portfolio</p></a>
+			</li>
+
+			<li>
+					<a href= "biografia.html"><p>Biografía</p></a>
+			</li>
+
+			<li>
+					<a href="cursos.html"><p>Cursos</p></a>
+			</li>
+
+			<li>
+					<a href= "contacto.html"><p>Contacto</p></a>
+			</li>
+			<li>
+				<form action= "http://www.google.com/search" method="get">
+					<input type= "text" placeholder="Buscar en Google" name= "q">
+					<button type="submit"> <img src="imagenes/lupa.jpg" width= "12"> </button>
+					
+				</form>
+			</li>
+
+
+	</ul>
+
+
+</div>
+
+
+
+ <!--ESTO ES UN BUSCADOR DE GOOGLE-->
+
+
+<div class= "volver">
+	<a href="#logotipo" > <img src="imagenes/triangulo.jpg" alt= "triángulo" width="35"/> <p>Volver a inicio</p></a>
+</div>
+
+<a href="" id="link"><img src="" id="imagen"></a>
+
+<button onclick="document.getElementById('hora').innerHTML=Date()">Hoy es...</button>
+
+<p id="hora"></p>
+
+<h1 onclick="this.innerHTML='¡Muchas Gracias!'">¿Te gusta lo que ves?</h1>
+
+</body>
+</html>
+
+
+
+
+
